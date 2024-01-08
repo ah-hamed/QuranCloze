@@ -26,14 +26,8 @@ for row in index_ajzaa_csv_reader:
 imp_csv_file = open('outputs/importMeInAnki.csv', 'w', encoding='utf-8-sig')    
 imp_csv_writer = csv.writer(imp_csv_file)
 
-# Prepare CSV to be published
-pub_csv_file = open('outputs/QuranClozeFields.csv', 'w', encoding='utf-8-sig')    
-pub_csv_writer = csv.DictWriter(pub_csv_file, [
-    'PageNumber رقم الصفحة',
-    'Question السؤال',
-    'Context السياق'
-    ])
-pub_csv_writer.writeheader()
+# Prepare JSON to be published
+pub_fields = {}
 
 # Prepare CSV fields
 for key in pages_processed.keys():
@@ -77,8 +71,12 @@ f"""<div class="flex-container">
     Tags = juz_tag + " " + surah_tag
 
     imp_csv_writer.writerow([PageNumber, Question, Context, Tags])
-    pub_csv_writer.writerow({
-        'PageNumber رقم الصفحة': PageNumber,
-        'Question السؤال': Question,
-        'Context السياق': Context
-    })
+    
+    pub_fields[pagenumber] = {
+        'Question': Question,
+        'Context': Context
+    }
+
+json.dump(pub_fields,
+           open('outputs/pub_fields.json', 'w', encoding='utf-8-sig'),
+            ensure_ascii=False)

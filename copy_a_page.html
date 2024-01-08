@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar">
+    <head>
+        <title>QuranCloze - استعادة النص</title>
+        <script>
+            fetch('https://github.com/ah-hamed/QuranCloze/outputs/pub_fields.json')
+            .then(response => response.json())
+            .then(data => {
+                data = data;
+            })
+
+            function get_page(pagenum, field) {
+                return data[pagenum][field]
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number">
+        <input type="dropdown">
+    </body>
+</html>
