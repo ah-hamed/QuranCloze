@@ -5,48 +5,48 @@
 - هناك تحسينات بصرية وتمييز لأرقام الآيات واتجاه الصفحة يمينًا أو يسارًا، وغير ذلك، وهذا يساعد الذاكرة البصرية، وهناك أيضا دعم للوضع الداكن.
 - الرزمة منظمة باستخدام الوسوم (Tags)، وهناك وسوم لأجزاء القرآن الكريم، ووسوم أخرى للسور.
 ## لقطات الشاشة
-![[screenshots/front_light.png]]
-![[screenshots/front_dark.png]]
-![[screenshots/back_dark.png]]
-![[screenshots/context.gif]]
+![](screenshots/front_light.png)
+![](screenshots/front_dark.png)
+![](screenshots/back_dark.png)
+![](screenshots/context.gif)
 ## كيفية الاستخدام
 ### في البداية
 1. قم بتحميل الرزمة من [AnkiWeb](https://ankiweb.net/shared/info/555820561) أو من [GitHub](https://github.com/ah-hamed/QuranCloze/releases) ثم استوردها.
 2. افتح متصفح البطاقات وقم بتعليق (Suspend) جميع ملحوظات الرزمة، إن لم تكن معلقة بالفعل.
 	- يمكنك التأكد من ذلك إذا وجدت جميع البطاقات مظللة باللون الأصفر في متصفح البطاقات 
-	- ![[screenshots/screenshots/suspend_all.png]]
+	- ![](screenshots/screenshots/suspend_all.png)
 ### كيف تنشئ بطاقة؟
 1. قم بإلغاء تعليق (Unsuspend) الملحوظات التي تحتوي صفحات القرآن الكريم التي تريد دراستها.
 	- على سبيل المثال نقوم بإلغاء تعليق الصفحة رقم 10 
-	- ![[screenshots/unsuspend.png]]
+	- ![](screenshots/unsuspend.png)
 2. قم بتحديد النص الذي تريد أن تراجعه في حقل السؤال (Question) سواء كان آية أو أكثر أو جزءا من الآية أو كلمة، ثم قم بالضغط على زر [...] أو اضغط. 
 > [!CAUTION] انتبه
 > تأكد أنك تقوم بتعديل حقل السؤال (Question) وليس حقل السياق (Context). ويفضل أن تقوم بجعل حقل السياق مطويا (collapsed) بشكل افتراضي، وذلك من خلال (الأدوات > إدارة أنواع الملحوظات)
 
-![[screenshots/create_a_cloze.png]]
-![[screenshots/created_cloze.png]]
+![](screenshots/create_a_cloze.png)
+![](screenshots/created_cloze.png)
 ### كيف تخفي أكثر من موضع في نفس الصفحة؟
 إذا أردت أن تحدد جزئين أو أكثر متباعدين عن بعضهما في نفس الصفحة، فأعط لهم نفس رقم البطاقة، والذي يكون مكتوبا بعد حرف c، مثل c1, c2 وهكذا.
-![[screenshots/multiple_in_one.png]]
+![](screenshots/multiple_in_one.png)
 ### كيف تحذف بطاقة؟
 #### على الحاسوب
 1. قم بحذف الأقواس الخاصة بملء الفراغات، مع إبقاء النص القرآني الذي بينها.
-	- ![[screenshots/delete_a_card.png]]
+	- ![](screenshots/delete_a_card.png)
 2. قم بحذف البطاقات الفارغة، وتأكد من تفعيل خيار الإبقاء على الملحوظات التي ليس لها بطاقات صالحة.
 > [!CAUTION] انتبه
 > إذا لم تقم بتفعيل هذا الخيار، قد تفقد جميع الملحوظات التي لم تدرسها بعد!
 
-![[screenshots/find_empty.png]]
-![[screenshots/delete_empty.png]]
+![](screenshots/find_empty.png)
+![](screenshots/delete_empty.png)
 #### على الأندرويد
 1. نفس الخطوة 1 كما على الحاسوب.
 2. فيما يتعلق بخطوة 2، فتطبيق أنكيدرويد لا يدعم حتى الآن خاصية الإبقاء على الملحوظات التي ليس لها بطاقات صالحة، لذا قد نلجأ لحل بديل، وهو أن تقوم بتعليق البطاقة الفارغة عندما تظهر أمامك أثناء المراجعة على سبيل المثال
-![[screenshots/suspend_empty.png]]
+![](screenshots/suspend_empty.png)
 ### ماذا لو حذفت ملحوظة أو جزءا من النص القرآني بالخطأ؟
 توجه إلى [هذه الصفحة](https://htmlpreview.github.io/?https://github.com/ah-hamed/QuranCloze/blob/main/copy_a_page.html) وقم بجلب ما فقدت.
 ## نصائح إضافية
 - للحصول على عرض أفضل للبطاقات على متصفح بطاقات الأندرويد، يمكنك تفعيل خيار "اقتطاع المحتوى"
-	![[screenshots/truncate_ankidroid_browser.png]]
+	![](screenshots/truncate_ankidroid_browser.png)
 ## المصادر
 - النص القرآني والخط المستخدم:
 	- خط النسخ الحاسوبي - حفص - مجمع الملك فهد لطباعة المصحف الشريف - النسخة رقم 18
