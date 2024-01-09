@@ -1,0 +1,148 @@
+.card {
+    font-family: myfont;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    direction: rtl;
+}
+
+.card.nightMode {
+    background-color: #121212;
+}
+
+.cloze {
+    font-weight: bold;
+    color: red;
+    line-height: 1.25;
+}
+
+.nightMode .cloze{
+    color: #ffaa8e;
+    font-weight: normal;
+}
+
+.cloze_central {
+    display: block;
+    width: 100%;
+    padding-right: 48%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.left_contextpage, .right_contextpage {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 390px;
+    border: 2px solid;
+    white-space: nowrap;
+    margin: 1px;
+}
+
+td, .left_contextpage, .right_contextpage {
+    background-color: #FBF3D7;
+    color: black;
+    border: solid 2px black;
+    padding: 8px;
+    width: 200px;
+    text-align-last: justify;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.right_contextpage {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.left_contextpage {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#current_contextpage {
+    border: red solid 6px;
+}
+
+.nightMode #current_contextpage {
+    border-color: #ff623e;
+}
+
+.surah_line {
+    text-align-last: center;
+    background-color: lightgreen;
+    color: darkblue;
+    border-radius: 4px;
+}
+
+.basmala_line {
+    text-align-last: center;
+}
+
+.nightMode .surah_line {
+    background-color: #494e49;
+    color: yellow;
+}
+
+.nightMode td, .nightMode .left_contextpage, .nightMode .right_contextpage {
+    background-color: #252523;
+    color: white;
+    font-weight: normal;
+    border: solid 2px white;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url("_UthmanicHafs1 Ver18.ttf");
+}
+
+.display-none {
+    display: none;
+}
+
+.ayah_number {
+    color: blue;
+}
+
+.nightMode .ayah_number {
+    color: yellow;
+}
+
+.td_inactive_left {
+    background-image: linear-gradient(to right, #FBF3D7, white);
+    border-image: linear-gradient(to left, white, black) 2;
+    border-width: 2px;
+}
+
+.nightMode .td_inactive_left {
+    background-image: linear-gradient(to right, #252523, #121212);
+    border-image: linear-gradient(to left, #121212, white) 2;
+    border-width: 2px;
+}
+
+.td_inactive_right {
+    background-image: linear-gradient(to right, white, #FBF3D7);
+    border-image: linear-gradient(to right, white, black) 2;
+    border-width: 2px;
+}
+
+.nightMode .td_inactive_right {
+    background-image: linear-gradient(to right, #121212, #252523);
+    border-image: linear-gradient(to right, #121212, white) 2;
+    border-width: 2px;
+}
+
+th {
+    border: none;
+    font-size: 14px;
+}
+
+table {
+    margin: auto;
+    white-space: nowrap;
+    padding: 10px;
+}

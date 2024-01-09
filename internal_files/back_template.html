@@ -1,0 +1,32 @@
+{{FrontSide}}
+
+<div id="cloze_Question_answer" style="display: none;">{{cloze:Question}}</div>
+
+<script>
+
+	cloze_Question_answer = document.querySelector("#cloze_Question_answer").innerHTML;
+
+	cloze_Question_answer = cloze_Question_answer.replace(/ \b(\d+)\b/g, '<span class="ayah_number"> $1 </span>');
+		
+	document.querySelector(".active_page").innerHTML = cloze_Question_answer;
+
+</script>
+
+
+<div style="text-align: center" id="context">
+
+	<p><span style="color: #069453;"><strong> السياق </strong></span></p>
+
+		{{Context}}
+
+</div>
+
+<script>
+
+	context = document.querySelector("#context").innerHTML;
+
+	context = context.replace(/ \b(\d+)\b/g, '<span class="ayah_number"> $1 </span>');
+		
+	document.querySelector("#context").innerHTML = context;
+
+</script>

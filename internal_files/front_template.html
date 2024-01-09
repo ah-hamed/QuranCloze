@@ -1,0 +1,107 @@
+<table>
+	<thead>
+		<tr>
+			<th id="right_header"></th>
+			<th id="left_header"></th>
+		</tr>
+	</thead>
+	<tr>
+		<td id="right_page"></td>
+		<td id="left_page"></td>
+	</tr>
+</table>
+
+<div id="cloze_Question" class="display-none">{{cloze:Question}}</div>
+<div id="PageNumber" class="display-none">{{PageNumber}}</div>
+
+<script>
+
+	PageNumber = document.querySelector("#PageNumber").innerHTML;
+	cloze_Question = document.querySelector("#cloze_Question").innerHTML;
+
+	surahs_pagenum = 
+{"1": "سورة الفاتحة", "2": "سورة البقرة", "50": "سورة آل عمران", "77": "سورة النساء", "106": "سورة المائدة", "128": "سورة الأنعام", "151": "سورة الأعراف", "177": "سورة الأنفال", "187": "سورة التوبة", "208": "سورة يونس", "221": "سورة هود", "235": "سورة يوسف", "249": "سورة الرعد", "255": "سورة ابراهيم", "262": "سورة الحجر", "267": "سورة النحل", "282": "سورة الإسراء", "293": "سورة الكهف", "305": "سورة مريم", "312": "سورة طه", "322": "سورة الأنبياء", "332": "سورة الحج", "342": "سورة المؤمنون", "350": "سورة النور", "359": "سورة الفرقان", "367": "سورة الشعراء", "377": "سورة النمل", "385": "سورة القصص", "396": "سورة العنكبوت", "404": "سورة الروم", "411": "سورة لقمان", "415": "سورة السجدة", "418": "سورة الأحزاب", "428": "سورة سبأ", "434": "سورة فاطر", "440": "سورة يس", "446": "سورة الصافات", "453": "سورة سورة ص", "458": "سورة الزمر", "467": "سورة غافر", "477": "سورة فصلت", "483": "سورة الشورى", "489": "سورة الزخرف", "496": "سورة الدخان", "499": "سورة الجاثية", "502": "سورة الأحقاف", "507": "سورة محمد", "511": "سورة الفتح", "515": "سورة الحجرات", "518": "سورة سورة ق", "520": "سورة الذاريات", "523": "سورة الطور", "526": "سورة النجم", "528": "سورة القمر", "531": "سورة الرحمن", "534": "سورة الواقعة", "537": "سورة الحديد", "542": "سورة المجادلة", "545": "سورة الحشر", "549": "سورة الممتحنة", "551": "سورة الصف", "553": "سورة الجمعة", "554": "سورة المنافقون", "556": "سورة التغابن", "558": "سورة الطلاق", "560": "سورة التحريم", "562": "سورة الملك", "564": "سورة القلم", "566": "سورة الحاقة", "568": "سورة المعارج", "570": "سورة نوح", "572": "سورة الجن", "574": "سورة المزمل", "575": "سورة المدثر", "577": "سورة القيامة", "578": "سورة الإنسان", "580": "سورة المرسلات", "582": "سورة النبأ", "583": "سورة النازعات", "585": "سورة عبس", "586": "سورة التكوير", "587": "سورة الإنفطار - سورة المطففين", "589": "سورة الانشقاق", "590": "سورة البروج", "591": "سورة الطارق - سورة الأعلى", "592": "سورة الغاشية", "593": "سورة الفجر", "594": "سورة البلد", "595": "سورة الشمس - سورة الليل", "596": "سورة الضحى - سورة الشرح", "597": "سورة التين - سورة العلق", "598": "سورة القدر - سورة البينة", "599": "سورة الزلزلة - سورة العاديات", "600": "سورة القارعة - سورة التكاثر", "601": "سورة العصر - سورة الهمزة - سورة الفيل", "602": "سورة قريش - سورة الماعون - سورة الكوثر", "603": "سورة الكافرون - سورة النصر - سورة المسد", "604": "سورة الإخلاص - سورة الفلق - سورة الناس"}
+	
+	if (parseInt(PageNumber) % 2 == 0){
+
+		document.querySelector("#left_page").classList.add("active_page");
+		document.querySelector("#left_page").innerHTML = cloze_Question;
+
+		document.querySelector("#right_page").className = "td_inactive_left";
+		document.querySelector("#right_page").style.borderRight = "none";
+
+		left_header = document.querySelector("#left_header");
+		current_surah = "";
+
+		for (const pagenum in surahs_pagenum) {
+			if (parseInt(pagenum) == parseInt(PageNumber)){
+				current_surah = surahs_pagenum[pagenum];
+				break;
+			} else if (parseInt(pagenum) > parseInt(PageNumber)) {
+				let i = parseInt(PageNumber) - 1;
+				while (true) {
+					if (String(i) in surahs_pagenum) {
+						current_surah = surahs_pagenum[i];
+						break;
+					} else {
+						i--;
+					}
+				}
+			}
+		}
+		left_header.innerHTML = '<div style="float: right">' + current_surah + '</div><div style="float: left">' + PageNumber + '</div>';
+
+	} else {
+
+		document.querySelector("#right_page").classList.add("active_page");
+		document.querySelector("#right_page").innerHTML = cloze_Question;
+
+		document.querySelector("#left_page").className = "td_inactive_right";
+		document.querySelector("#left_page").style.borderLeft = "none";
+
+		let right_header = document.querySelector("#right_header");
+		let current_surah = "";
+		for (const pagenum in surahs_pagenum) {
+			if (parseInt(pagenum) == parseInt(PageNumber)){
+				current_surah = surahs_pagenum[pagenum];
+				break;
+			} else if (parseInt(pagenum) > parseInt(PageNumber)) {
+				let i = parseInt(PageNumber) - 1;
+				while (true) {
+					if (String(i) in surahs_pagenum) {
+						current_surah = surahs_pagenum[i];
+						break;
+					} else {
+						i--;
+					}
+				}
+			}
+		}
+		right_header.innerHTML = '<div style="float: left">' + current_surah + '</div><div style="float: right">' + PageNumber + '</div>';
+	}
+
+	document.querySelector('.active_page').childNodes.forEach(node => {
+		if (node.nodeType === Node.TEXT_NODE) {
+			
+			// Apply "ayah_number" class to Ayah numbers only
+			span = document.createElement('span');
+			span.innerHTML = node.nodeValue.replace(/(\d+)/g, '<span class="ayah_number"> $1</span>');
+			node.replaceWith(span);
+
+		} else if (node.nodeName == 'SPAN'
+			&& node.className == 'cloze'
+			&& node.dataset['cloze'].includes('<br>')) {
+
+				node.innerHTML = '[...]'
+				+ node.dataset['cloze']
+				.replace(/[^'<br>']/g, '')
+				.replace(/<br>/g, '<span class="cloze_central">[...]</span>')
+				+ '[...]';
+
+				previousSibling = node.previousSibling;
+				previousSibling.style.display = "inline-block";
+		}
+
+	});
+
+</script>
