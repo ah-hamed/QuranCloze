@@ -92,14 +92,23 @@
 			&& node.className == 'cloze'
 			&& node.dataset['cloze'].includes('<br>')) {
 
-				node.innerHTML = '[...]'
-				+ node.dataset['cloze']
-				.replace(/[^'<br>']/g, '')
-				.replace(/<br>/g, '<span class="cloze_central">[...]</span>')
-				+ '[...]';
+				if (node.dataset['cloze'].split('<br>').length == 2) {
+					// means there is only one linebreak, or no complete lines in the cloze
+					node.innerHTML = '[...]<br>[...]'
+				
+				} else {
+				
+				breaks = node.dataset['cloze'].split('<br>').length - 1;
 
-				previousSibling = node.previousSibling;
-				previousSibling.style.display = "inline-block";
+				central_clozes = '';
+
+				for (i=0; i < breaks-1; i++) {
+					central_clozes += '<span class="cloze_central">[...]</span>'
+				}
+
+				node.innerHTML = '[...]<br>' + central_clozes + '[...]';
+							
+				}
 		}
 
 	});
